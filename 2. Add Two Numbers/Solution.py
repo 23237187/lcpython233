@@ -30,16 +30,21 @@ class Solution:
         head = ListNode(0)
         d = head
         accumlator = 0
+
         while l1 or l2 :
             accumlator //= 10
+
             if l1 is not None:
                 accumlator += l1.val
                 l1 = l1.next
+
             if l2 is not None:
                 accumlator += l2.val
                 l2 = l2.next
+
             d.next = ListNode(accumlator % 10)
             d = d.next
+            
         if accumlator // 10 > 0:
             d.next = ListNode(1) #进位最多为1
         
